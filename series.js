@@ -249,9 +249,10 @@
           <p class="react"><small>Реакция на ваш выбор</small>${esc(q.reaction[i])}</p>
           <h3><span class="mark${hit ? '' : ' is-other'}" aria-hidden="true"></span>${hit ? 'Ваш выбор совпал с авторским разбором' : 'Авторский разбор выбирает другой ход'}</h3>
           <p>${esc(q.why[i])}</p>
-          ${hit ? '' : `<p><b>Ход из разбора:</b> ${esc(q.options[q.key])}</p><p>${esc(q.why[q.key])}</p>`}
+          ${hit ? '' : `<p><b>Авторский разбор выбирает этот ход:</b> ${esc(q.options[q.key])}</p><p>${esc(q.why[q.key])}</p>`}
           <p class="fact"><b>Решающий факт</b>${esc(q.fact)}</p>
           <p class="rule">${esc(q.rule)}</p>
+          <details class="all-why" open><summary>Почему так: разбор всех вариантов</summary>${order.map((k, p) => `<p><b>${'ABCD'[p]}. ${esc(q.options[k])}</b>${k === q.key ? ' <small>ход авторского разбора</small>' : ''}<br>${esc(q.why[k])}</p>`).join('')}</details>
           <p class="hint">В тренажёре за каждой сценой идёт та же тема в других условиях, и граница правила видна на обеих.</p>
           <div class="actions">
             <a class="btn" href="#pilot">Записаться в пилот <span aria-hidden="true">→</span></a>

@@ -436,6 +436,11 @@ html.is-still .js-motion .reveal,.is-still.js-motion .reveal{opacity:1;transform
 /* Demo scene notes (public landing) */
 .scene-copy .demo-note{margin:10px 0 0;max-width:62ch}
 .scene-copy .demo-note.demo-key{margin-top:6px;color:var(--amber)}
+/* All options explained after the choice (public landing) */
+.verdict .all-why{margin:18px 0 0;border-top:1px solid var(--line,rgba(255,255,255,.14));padding-top:12px}
+.verdict .all-why summary{cursor:pointer;font-weight:600}
+.verdict .all-why p{margin:10px 0 0}
+.verdict .all-why small{color:var(--amber);font-weight:600}
 /* Pilot sign-up (public landing) */
 .pilot{padding:clamp(72px,10vw,140px) var(--gutter);max-width:880px;margin:0 auto}
 .pilot h2{font:400 clamp(34px,5vw,64px)/1.05 var(--display);color:var(--paper);margin:0 0 20px;letter-spacing:-.01em}
