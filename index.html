@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>CaseToPass · Пять дней до дедлайна</title>
+<meta name="description" content="Сюжетная подготовка к экзамену PMP®. Восемь рабочих ситуаций на одном проекте тренируют выбор первого шага по логике PMI: с учётом полномочий, ценности, рисков и людей.">
+<meta name="theme-color" content="#0B1215">
+<!-- Link preview: absolute URLs of the public preview; the image lives in landing/series/media/og.jpg (series-media/ on the preview) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="CaseToPass">
+<meta property="og:url" content="https://doroninivan.github.io/casetopass-landing/">
+<meta property="og:title" content="Пять дней до дедлайна · CaseToPass">
+<meta property="og:description" content="Симулятор PMP®: неделя на одном проекте и восемь кейсов из домена Business Environment. Сначала свой ход, потом варианты и разбор.">
+<meta property="og:image" content="https://doroninivan.github.io/casetopass-landing/series-media/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Нора, владелец продукта, и название серии «Пять дней до дедлайна»">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="shared/series-fonts.css">
+<link rel="preload" as="image" href="series-media/hero-wide.webp" media="(min-width: 761px)">
+<link rel="preload" as="image" href="series-media/hero-vertical.webp" media="(max-width: 760px)">
+<link rel="stylesheet" href="series.css">
+</head>
+<body>
+<a class="skip" href="#scene">Перейти к сцене с Норой</a>
+
+<header class="bar" id="bar">
+  <a class="wordmark" href="./" aria-label="CaseToPass, на главную">case<b>to</b>pass</a>
+  <span class="bar-note">Тренажёр решений для PMP®</span>
+  <nav class="bar-nav" aria-label="Разделы">
+    <a href="#how">Как устроено</a>
+    <a href="#cast">В ролях</a>
+    <a href="#episodes">Серии</a>
+  </nav>
+  <button class="bar-motion" id="motionToggle" type="button" aria-pressed="false"><span class="bm-icon" aria-hidden="true"></span><span class="bm-text">Остановить анимацию</span></button>
+  <a class="bar-cta" href="#pilot">Записаться в пилот</a>
+</header>
+
+<main>
+  <!-- Cold open -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-media" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 760px)" srcset="series-media/hero-vertical.webp">
+        <img class="hero-poster" src="series-media/hero-wide.webp" alt="">
+      </picture>
+      <video class="hero-video" muted playsinline loop preload="none"
+        data-wide="series-media/hero-wide.mp4" data-tall="series-media/hero-tall.mp4"></video>
+    </div>
+    <div class="grade" aria-hidden="true"></div>
+
+    <div class="hero-copy">
+      <p class="kicker">Northline Media · проект Trend Radar</p>
+      <h1 id="hero-title">
+        <span class="h1-pre">Симулятор PMP</span>
+        <span class="line"><span>Пять дней</span></span>
+        <span class="line"><span>до дедлайна</span></span>
+      </h1>
+      <p class="lede">Неделя на одном проекте и восемь кейсов из домена Business Environment. Вы тренируетесь выбирать первый шаг по условиям, как в ситуационных вопросах PMP: кто решает, что уже согласовано, чем рискует проект. Сначала свой ход, потом варианты и разбор.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#scene">Попробовать демо-сцену <span aria-hidden="true">→</span></a>
+        <a class="link" href="#pilot">Записаться в пилот</a>
+      </div>
+      <p class="fine">Авторский черновик: ключи и переводы должны проверить два PMP-эксперта, заключений пока нет.</p>
+    </div>
+
+    <p class="subtitle hero-sub"><span class="who">Нора:</span> <span class="said">Мне нужен ответ до прогона демо. Это всего один дополнительный источник данных.</span></p>
+  </section>
+
+
+  <!-- The week in one scroll: Mon 09:00 → Fri 10:00 -->
+  <section class="weekrun" id="week-run" aria-labelledby="wr-title">
+    <div class="wr-stick">
+      <p class="kicker wr-kicker">Понедельник, 09:00 → пятница, 10:00</p>
+      <h2 id="wr-title" class="wr-title">Одна неделя. Восемь кейсов до совета.</h2>
+      <div class="wr-clock" aria-hidden="true"><span class="flip" id="wrDay">ПН</span><span class="flip" id="wrTime">09:00</span></div>
+      <ol class="wr-days">
+        <li class="wr-day" data-day="0"><span class="wr-dname">Понедельник</span><span class="wr-eps">Серии 1–2 · Нора, Марк</span><p class="wr-q">Кто вправе менять объём? Что уже согласовано?</p><span class="wr-topics">Управление изменениями · Полномочия</span></li>
+        <li class="wr-day" data-day="1"><span class="wr-dname">Вторник</span><span class="wr-eps">Серии 3–4 · Лена, Майя</span><p class="wr-q">Какое требование обязательно? Что мешает команде?</p><span class="wr-topics">Обязательные требования · Препятствия</span></li>
+        <li class="wr-day" data-day="2"><span class="wr-dname">Среда</span><span class="wr-eps">Серии 5–6 · Марк, Сергей</span><p class="wr-q">Какой риск уже наступил? Почему проблема вернулась?</p><span class="wr-topics">Управление рисками · Препятствия</span></li>
+        <li class="wr-day" data-day="3"><span class="wr-dname">Четверг</span><span class="wr-eps">Серии 7–8 · Амир, Ричард</span><p class="wr-q">Что меняется для людей внутри? Что меняется снаружи?</p><span class="wr-topics">Организационные изменения · Внешние изменения</span></li>
+        <li class="wr-day" data-day="4"><span class="wr-dname">Пятница, 10:00</span><span class="wr-eps">Совет</span><p class="wr-q">Восемь кейсов, в каждом два ответа. Своё обоснование вы сверяете с разбором сами.</p><span class="wr-topics">Логика PMI: ценность, риски, люди, полномочия</span></li>
+      </ol>
+      <div class="wr-reel" aria-hidden="true"><div class="wr-track" id="wrTrack"><figure class="wr-shot"><img src="series-media/ep01-960.webp" alt="" loading="lazy"><figcaption>01</figcaption></figure><figure class="wr-shot"><img src="series-media/ep02-960.webp" alt="" loading="lazy"><figcaption>02</figcaption></figure><figure class="wr-shot"><img src="series-media/ep03-960.webp" alt="" loading="lazy"><figcaption>03</figcaption></figure><figure class="wr-shot"><img src="series-media/ep04-960.webp" alt="" loading="lazy"><figcaption>04</figcaption></figure><figure class="wr-shot"><img src="series-media/ep05-960.webp" alt="" loading="lazy"><figcaption>05</figcaption></figure><figure class="wr-shot"><img src="series-media/ep06-960.webp" alt="" loading="lazy"><figcaption>06</figcaption></figure><figure class="wr-shot"><img src="series-media/ep07-960.webp" alt="" loading="lazy"><figcaption>07</figcaption></figure><figure class="wr-shot"><img src="series-media/ep08-960.webp" alt="" loading="lazy"><figcaption>08</figcaption></figure></div></div>
+      <div class="wr-rule" aria-hidden="true"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><i id="wrFill"></i></div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how" id="how" aria-labelledby="how-title">
+    <div class="how-head">
+      <h2 id="how-title">Одна сцена, <br>три кадра</h2>
+      <p>В каждой серии свои факты, сроки и полномочия. Вы выбираете ход, а разбор показывает, какой факт его определил.</p>
+    </div>
+    <div class="how-body">
+      <div class="how-stage" aria-hidden="true">
+        <figure class="stage-frame is-on" data-frame="0"><img src="series-media/scene-question-960.webp" srcset="series-media/scene-question-960.webp 960w, series-media/scene-question.webp 1376w" sizes="(max-width: 760px) 100vw, 55vw" alt="" loading="lazy"></figure>
+        <figure class="stage-frame stage-note" data-frame="1">
+          <div class="note">
+            <span class="note-label">Ваш ход</span>
+            <p class="note-text">Сначала я<span class="caret"></span></p>
+            <span class="note-foot">Записан до вариантов · остаётся в этой вкладке</span>
+          </div>
+        </figure>
+        <figure class="stage-frame" data-frame="2"><img src="series-media/scene-reaction-960.webp" srcset="series-media/scene-reaction-960.webp 960w, series-media/scene-reaction.webp 1376w" sizes="(max-width: 760px) 100vw, 55vw" alt="" loading="lazy"></figure>
+      </div>
+      <ol class="how-steps">
+        <li class="how-step" data-step="0">
+          <img class="step-img" src="series-media/scene-question-960.webp" alt="Нора с телефоном у уха ждёт ответа" loading="lazy">
+          <h3>Коллега приходит с просьбой</h3>
+          <p>Вы руководите Trend Radar. Нора, Марк, Лена и остальные говорят с вами напрямую. В условии есть всё, что нужно для решения: кто принимает решение, что уже согласовано, сколько осталось до пятницы.</p>
+        </li>
+        <li class="how-step" data-step="1">
+          <div class="step-img step-note" aria-hidden="true"><div class="note"><span class="note-label">Ваш ход</span><p class="note-text">Сначала я…</p></div></div>
+          <h3>Свой ход до вариантов</h3>
+          <p>Запишите, что сделаете и почему. Ответ фиксируется до показа вариантов, а после разбора вы сравните с ним свой первый ход.</p>
+        </li>
+        <li class="how-step" data-step="2">
+          <img class="step-img" src="series-media/scene-reaction-960.webp" alt="Нора обдумывает ответ" loading="lazy">
+          <h3>Реакция и разбор</h3>
+          <p>Выберите вариант и посмотрите, как отреагирует коллега. В разборе есть решающий факт и принцип. Затем та же тема в других условиях. После второго ответа вы называете, какое условие изменило ход, и видите границу правила для обеих ситуаций.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- The decision moment -->
+  <section class="scene" id="scene" aria-labelledby="scene-title">
+    <div class="scene-media" aria-hidden="true">
+      <img class="scene-img scene-q" src="series-media/scene-question.webp" alt="" loading="lazy">
+      <img class="scene-img scene-r" src="series-media/scene-reaction.webp" alt="" loading="lazy">
+    </div>
+    <div class="grade grade-scene" aria-hidden="true"></div>
+    <div class="scene-copy">
+      <p class="kicker">Демо-сцена · Нора, владелец продукта</p>
+      <h2 id="scene-title">Третья задержка</h2>
+      <p class="subtitle scene-line"><span class="who">Нора:</span> <span class="said" id="sceneLine">Жду ревью Глеба уже полтора суток. Может, напомнишь всем про правило?</span></p>
+      <p class="fine demo-note">Демо-сцена, её нет в тренажёре. Здесь тема — работа с командой. В модуле Business Environment вы разбираете полномочия, обязательные требования, препятствия, риски и изменения вокруг проекта. Шаги те же: сначала свой ход, потом варианты и разбор.</p>
+      <p class="fine demo-note demo-key">Ключ этой сцены эксперты ещё не проверили.</p>
+
+      <div class="desk" id="desk">
+        <p class="stem" id="stem">Ты руководишь проектом Trend Radar. Задачи, которые Нора поставила в приоритет, уже полтора суток ждут ревью кода у Глеба. Месяц назад команда договорилась проверять код в течение суток. Остальные разработчики укладываются в срок. У Глеба это третья задержка за две недели, она видна в трекере. Сам Глеб пока не знает, что его опоздания кто-то заметил. Нора сегодня уже второй раз спрашивает о ревью. Что сделать первым?</p>
+        <div class="move" id="move">
+          <label for="firstMove">Ваш ход: что вы сделаете первым и почему?</label>
+          <textarea id="firstMove" maxlength="700" rows="3" placeholder="Сначала я… потому что…"></textarea>
+          <div class="move-row">
+            <button class="btn" type="button" id="commitMove" disabled>Записать ход <span aria-hidden="true">→</span></button>
+            <span class="hint" id="moveHint">Хотя бы одно предложение. Текст остаётся в этой вкладке, ИИ его не оценивает.</span>
+          </div>
+        </div>
+        <div class="choices" id="choices" hidden></div>
+        <div class="verdict" id="verdict" hidden aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cast -->
+  <section class="cast" id="cast" aria-labelledby="cast-title">
+    <div class="cast-head">
+      <h2 id="cast-title">В ролях</h2>
+      <p>Семь заинтересованных сторон одного проекта. У каждого своя задача и свой вопрос к вам. Наведите курсор или коснитесь портрета.</p>
+    </div>
+    <ul class="cast-row">
+      <li class="person" style="--x:66%"><button type="button" class="person-btn" aria-describedby="line-nora">
+        <img src="series-media/ep01-960.webp" alt="" loading="lazy"><video muted playsinline loop preload="none" data-src="series-media/cast-nora.mp4"></video>
+        <span class="person-name">Нора</span><span class="person-role">Владелец продукта</span></button>
+        <p class="person-line" id="line-nora">«Мне нужен ответ до прогона демо».</p></li>
+      <li class="person" style="--x:40%"><button type="button" class="person-btn" aria-describedby="line-mark">
+        <img src="series-media/ep05-960.webp" alt="" loading="lazy"><video muted playsinline loop preload="none" data-src="series-media/cast-mark.mp4"></video>
+        <span class="person-name">Марк</span><span class="person-role">Директор по ИТ</span></button>
+        <p class="person-line" id="line-mark">«Мой отказ у него на столе со вчерашнего дня».</p></li>
+      <li class="person" style="--x:67%"><button type="button" class="person-btn" aria-describedby="line-lena">
+        <img src="series-media/ep03-960.webp" alt="" loading="lazy"><video muted playsinline loop preload="none" data-src="series-media/cast-lena.mp4"></video>
+        <span class="person-name">Лена</span><span class="person-role">Управление данными</span></button>
+        <p class="person-line" id="line-lena">«Прогон демо через час».</p></li>
+      <li class="person" style="--x:53%"><button type="button" class="person-btn" aria-describedby="line-maya">
+        <img src="series-media/ep04-960.webp" alt="" loading="lazy"><video muted playsinline loop preload="none" data-src="series-media/cast-maya.mp4"></video>
+        <span class="person-name">Майя</span><span class="person-role">Продуктовый аналитик</span></button>
+        <p class="person-line" id="line-maya">«Что ему ответить?»</p></li>
+      <li class="person" style="--x:18%"><button type="button" class="person-btn" aria-describedby="line-sergey">
+        <img src="series-media/ep06-960.webp" alt="" loading="lazy"><video muted playsinline loop preload="none" data-src="series-media/cast-sergey.mp4"></video>
+        <span class="person-name">Сергей</span><span class="person-role">Технический лидер</span></button>
+        <p class="person-line" id="line-sergey">«Вечерняя смена снова звонит».</p></li>
+      <li class="person" style="--x:53%"><button type="button" class="person-btn" aria-describedby="line-amir">
+        <img src="series-media/ep07-960.webp" alt="" loading="lazy"><video muted playsinline loop preload="none" data-src="series-media/cast-amir.mp4"></video>
+        <span class="person-name">Амир</span><span class="person-role">Руководитель внедрения</span></button>
+        <p class="person-line" id="line-amir">«Ричард уже спрашивал об этом».</p></li>
+      <li class="person" style="--x:74%"><button type="button" class="person-btn" aria-describedby="line-richard">
+        <img src="series-media/ep08-960.webp" alt="" loading="lazy"><video muted playsinline loop preload="none" data-src="series-media/cast-richard.mp4"></video>
+        <span class="person-name">Ричард</span><span class="person-role">Генеральный директор</span></button>
+        <p class="person-line" id="line-richard">«Мне нужно понимать, что им сказать».</p></li>
+    </ul>
+  </section>
+
+  <!-- Episodes -->
+  <section class="episodes" id="episodes" aria-labelledby="eps-title">
+    <div class="eps-head">
+      <h2 id="eps-title">Восемь серий. <br>Одна неделя.</h2>
+      <p>Изменения объёма, требования к данным, задержки и запуск. Восемь сюжетных кейсов по задачам Business Environment из экзаменационной программы PMP® (ECO), у каждого свои ограничения и полномочия. Привязка к задачам ECO авторская, эксперты её пока не подтвердили. Дни недели — рамка сюжета: условия каждого кейса самостоятельные. People, Process и полный экзамен появятся позже.</p>
+    </div>
+    <ol class="eps">
+      <li class="ep ep-lead"><a href="#pilot"><img src="series-media/ep01-960.webp" srcset="series-media/ep01-960.webp 960w, series-media/ep01.webp 1920w" sizes="(max-width: 760px) 100vw, 66vw" alt="Нора с планшетом в коридоре офиса" loading="lazy"><span class="ep-n">Серия 1</span><span class="ep-t">Пятница уже в календаре</span><span class="ep-m">Нора · Управление изменениями</span></a></li>
+      <li class="ep"><a href="#pilot"><img src="series-media/ep02-960.webp" alt="Марк и Нора над договором с двумя пустыми строками для подписи" loading="lazy"><span class="ep-n">Серия 2</span><span class="ep-t">Две подписи</span><span class="ep-m">Марк · Управление проектом и полномочия</span></a></li>
+      <li class="ep"><a href="#pilot"><img src="series-media/ep03-960.webp" alt="Лена с планшетом у серверной" loading="lazy"><span class="ep-n">Серия 3</span><span class="ep-t">Цифры важны</span><span class="ep-m">Лена · Обязательные требования</span></a></li>
+      <li class="ep"><a href="#pilot"><img src="series-media/ep04-960.webp" alt="Майя с блокнотом в открытом офисе" loading="lazy"><span class="ep-n">Серия 4</span><span class="ep-t">Проект почти не движется</span><span class="ep-m">Майя · Препятствия и проблемы</span></a></li>
+      <li class="ep"><a href="#pilot"><img src="series-media/ep05-960.webp" alt="Марк у телефона в серверной" loading="lazy"><span class="ep-n">Серия 5</span><span class="ep-t">Звонок, к которому готовились</span><span class="ep-m">Марк · Управление рисками</span></a></li>
+      <li class="ep"><a href="#pilot"><img src="series-media/ep06-960.webp" alt="Сергей у доски с отметками об инцидентах" loading="lazy"><span class="ep-n">Серия 6</span><span class="ep-t">Это уже исправляли</span><span class="ep-m">Сергей · Препятствия и проблемы</span></a></li>
+      <li class="ep"><a href="#pilot"><img src="series-media/ep07-960.webp" alt="Амир с кружкой в вечернем офисе" loading="lazy"><span class="ep-n">Серия 7</span><span class="ep-t">После девяти никто не заходит</span><span class="ep-m">Амир · Организационные изменения</span></a></li>
+      <li class="ep ep-lead ep-last"><a href="#pilot"><img src="series-media/ep08-960.webp" srcset="series-media/ep08-960.webp 960w, series-media/ep08.webp 1920w" sizes="(max-width: 760px) 100vw, 66vw" alt="Ричард с отчётом у окна на рассвете" loading="lazy"><span class="ep-n">Серия 8</span><span class="ep-t">Цена пятницы</span><span class="ep-m">Ричард · Внешние изменения</span></a></li>
+    </ol>
+  </section>
+
+  <!-- Film of the week -->
+  <section class="film" aria-labelledby="film-title">
+    <div class="film-head">
+      <h2 id="film-title">Твой прогресс</h2>
+      <p>Каждый кейс даёт пару ответов: в основной ситуации и в других условиях. В конце модуля видно, какой из двух совпал с авторским разбором, а где ответа ещё нет.</p>
+    </div>
+    <div class="pairs">
+      <article class="pair">
+        <div class="pair-frames">
+          <figure data-match="true"><img src="series-media/ep01-960.webp" alt="" loading="lazy"><figcaption>Основная ситуация<b>совпал</b></figcaption></figure>
+          <figure class="pair-closeup" data-match="false"><img src="series-media/ep01-960.webp" alt="" loading="lazy"><figcaption>Другие условия<b>не совпал</b></figcaption></figure>
+        </div>
+        <h3>Нора · Пятница уже в календаре</h3>
+        <p>± Сравните изменившиеся условия</p>
+      </article>
+      <article class="pair">
+        <div class="pair-frames">
+          <figure data-match="true"><img src="series-media/ep03-960.webp" alt="" loading="lazy"><figcaption>Основная ситуация<b>совпал</b></figcaption></figure>
+          <figure class="pair-closeup" data-match="pending"><img src="series-media/ep03-960.webp" alt="" loading="lazy"><figcaption>Другие условия<b>ответа ещё нет</b></figcaption></figure>
+        </div>
+        <h3>Лена · Цифры важны</h3>
+        <p>Пара ещё не завершена</p>
+      </article>
+    </div>
+    <p class="pair-legend"><span>↶ Разберите обе ситуации</span><span>↗ Второй ответ совпал с разбором</span><span>± Сравните изменившиеся условия</span><span>✓ Оба ответа совпали с разбором</span></p>
+    <p class="film-note">Пример прохождения, а не данные участников. Пары показывают, совпали ли ответы с разбором, но не доказывают, что навык перенесётся на новые задачи.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" aria-labelledby="faq-title">
+    <h2 id="faq-title">Перед началом</h2>
+    <div class="faq-list">
+      <details><summary>Это полный симулятор экзамена PMP?</summary><p>Пока это сюжетный модуль по домену Business Environment: восемь сцен, к каждой дополнительная ситуация, и тест из восьми вопросов. Он не охватывает весь экзамен и не показывает готовность к сертификации.</p></details>
+      <details><summary>Что значит «логика PMI»?</summary><p>В заданиях экзамена PMP часто нужно выбрать действие в конкретной ситуации и учесть ценность, риски, людей, полномочия и подход проекта. Иногда первым шагом будет оценка, иногда действие, иногда эскалация. Универсальной последовательности нет, поэтому в каждой серии свой решающий факт.</p></details>
+      <details><summary>ИИ оценивает мой ответ?</summary><p>Нет. Свободный ответ сохраняется только в вашем браузере, и вы сами сравниваете его с разбором. Объяснения и реакции персонажей авторы написали заранее.</p></details>
+      <details><summary>Можно читать задания на английском?</summary><p>Да. В уроке и тесте можно показать английский текст условий, вариантов и разбора рядом с русским.</p></details>
+      <details><summary>Задания уже проверены экспертами?</summary><p>Сейчас это авторский черновик. До пилота два PMP-эксперта должны независимо проверить ключи и переводы. Их заключения пока не получены. Технические тесты не заменяют экспертную проверку.</p></details>
+    </div>
+  </section>
+
+  <!-- Finale -->
+  <section class="finale" aria-labelledby="finale-title">
+    <div class="finale-media" aria-hidden="true">
+      <img src="series-media/finale.webp" alt="" loading="lazy">
+      <video muted playsinline loop preload="none" data-src="series-media/finale.mp4"></video>
+    </div>
+    <div class="grade grade-finale" aria-hidden="true"></div>
+    <div class="finale-copy">
+      <p class="kicker">Переговорная, пятница</p>
+      <h2 id="finale-title"><span class="fin-time"><span class="flip fin-clock" id="finClock">10:00</span>.</span> <span class="fin-word">Совет.</span></h2>
+      <p>До него восемь кейсов, в каждом два ответа.</p>
+      <div class="hero-actions">
+        <a class="btn" id="finaleStart" href="#pilot">Записаться в пилот <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="fine">Пилот начнётся после проверки заданий экспертами. Сроков пока нет: оставьте контакт, и мы напишем.</p>
+    </div>
+  </section>
+  <!-- Pilot sign-up: the simulator opens to pilot participants -->
+  <section class="pilot" id="pilot" aria-labelledby="pilot-title">
+    <p class="kicker">Пилот</p>
+    <h2 id="pilot-title">Хотите пройти все восемь серий?</h2>
+    <p class="pilot-lede">Оставьте email. Мы напишем, когда модуль будет готов к пробным прохождениям после экспертной проверки. Дата пока не назначена.</p>
+    <form id="pilotForm" data-endpoint="https://casetopass-pilot.vercel.app/api/pilot">
+      <label for="pilotEmail">Ваш email</label>
+      <div class="pilot-fields"><input id="pilotEmail" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com" aria-describedby="pilotPrivacy pilotStatus"><button class="btn" type="submit">Хочу пройти пилот</button></div>
+      <div class="pilot-trap" aria-hidden="true"><label>Сайт<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <label class="pilot-consent"><input name="consent" type="checkbox" required>Разрешаю использовать мой email для связи по этому пилоту.</label>
+      <p id="pilotPrivacy" class="fine">Email нужен только для связи по пилоту. Ответы со страницы к заявке не прикрепляются. <a class="link" href="privacy.html">Подробнее о данных</a></p>
+      <p id="pilotStatus" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="foot">
+  <a class="wordmark" href="./">case<b>to</b>pass</a>
+  <p>Независимый учебный проект. Не связан с PMI и не одобрен PMI. PMP® и PMBOK® являются товарными знаками Project Management Institute. Персонажи, компания и события вымышлены. Задания остаются черновиками до экспертной проверки. Кадры и видео созданы генеративными моделями.</p>
+  <a class="link" href="privacy.html">Подробнее о данных</a>
+</footer>
+
+<!-- The week clock: one element that lives on every screen -->
+<div class="week" id="week" aria-hidden="true">
+  <span class="week-label">До совета<small>сюжетное время</small></span>
+  <span class="week-days"><i>Пн</i><i>Вт</i><i>Ср</i><i>Чт</i><i>Пт</i><span class="week-fill" id="weekFill"></span></span>
+  <span class="week-time" id="weekTime">Пн 09:00</span>
+</div>
+
+<script src="demo.js"></script>
+<script src="pilot.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
+<script src="series.js" defer></script>
+</body>
+</html>
