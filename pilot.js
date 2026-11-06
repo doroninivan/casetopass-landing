@@ -15,7 +15,7 @@
    const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email.value.trim(),consent:form.elements.consent.checked,website:form.elements.website.value,source:'casetopass-pilot-v1'}),signal:controller.signal,credentials:'omit',referrerPolicy:'no-referrer'});
    const data=await response.json().catch(()=>null);
    if(!response.ok||data?.accepted!==true)throw new Error(response.status===429?'rate':'submit');
-   form.reset();message('Заявка сохранена. Мы напишем на указанный email, когда начнётся пилот.');
+   form.reset();message(data.mailed===true?'Заявка сохранена. Мы отправили письмо-подтверждение на указанный email и напишем, когда начнётся пилот.':'Заявка сохранена. Мы напишем на указанный email, когда начнётся пилот.');
    if(typeof data.receipt==='string'&&/^[a-f0-9]{64}$/.test(data.receipt)){
     const link=document.createElement('a');link.href='privacy.html#withdraw='+data.receipt;link.textContent='Ссылка для удаления заявки';
     status.append(document.createElement('br'),link,document.createTextNode('. Сохраните её, если захотите удалить заявку позже.'));
