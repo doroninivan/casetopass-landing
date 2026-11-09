@@ -128,6 +128,21 @@ h1 .line+.line>span{padding-left:.55em}
 .move textarea:focus{border-color:var(--amber);outline:none}
 .move-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:16px}
 .hint{font-size:13px;color:var(--fog);max-width:34ch}
+.move-why{font-size:15px;color:#D3DAD6;margin:-2px 0 12px;max-width:52ch}
+.move-count{font-size:13px;color:var(--fog);margin-left:auto;font-variant-numeric:tabular-nums}
+.move-count.is-over{color:var(--amber)}
+.verdict .compare{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.verdict .cmp{border-left:2px solid var(--line);padding:2px 0 2px 14px}
+.verdict .cmp.is-author{border-left-color:var(--amber)}
+.verdict .cmp small{display:block;font:500 13px/1.4 var(--text);color:var(--fog);margin-bottom:6px}
+.verdict .cmp p{font:400 17px/1.45 var(--text);color:var(--paper);overflow-wrap:anywhere}
+.verdict .selfcheck{border:0;margin:0;padding:0;min-width:0}
+.verdict .selfcheck legend{font-weight:600;margin-bottom:10px;padding:0}
+.verdict .self-row{display:flex;flex-wrap:wrap;gap:8px}
+.verdict .self[aria-pressed="true"]{border-color:var(--amber);color:var(--paper)}
+.verdict .self-note:empty{display:none}
+.verdict .self-note{margin-top:10px}
+@media (max-width:640px){.verdict .compare{grid-template-columns:1fr}.move-count{margin-left:0}}
 .moved{border-left:2px solid var(--amber);padding:2px 0 2px 16px;margin-bottom:22px}
 .moved b{display:block;font-size:13px;color:var(--fog);font-weight:500;margin-bottom:4px}
 .moved p{font:400 20px/1.35 var(--display)}
@@ -432,6 +447,9 @@ html.is-still .js-motion .reveal,.is-still.js-motion .reveal{opacity:1;transform
   .bm-text{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
 @media (max-width:374px){.bar{gap:8px;padding:9px 12px}.bar-cta{font-size:13px;padding:8px 10px;white-space:nowrap}.wordmark{font-size:19px}}
 .week-label small{display:block;font-size:12px;letter-spacing:.02em;color:var(--fog);opacity:.85;line-height:1.2}
+.verdict .self{border:1px solid #33464C;border-radius:2px;padding:8px 16px;text-decoration:none;color:#D3DAD6}
+.verdict .self:hover{border-color:var(--amber)}
+.verdict .self[aria-pressed="true"]{border-color:var(--amber);color:var(--paper);background:#111D21}
 
 /* Demo scene notes (public landing) */
 .scene-copy .demo-note{margin:10px 0 0;max-width:62ch}

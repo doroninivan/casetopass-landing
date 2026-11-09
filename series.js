@@ -210,7 +210,14 @@
     let first = '', order = [];
     const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
     const ready = () => field.value.trim().length >= 10;
-    field.addEventListener('input', () => { commit.disabled = !ready(); });
+    // A soft limit: past 300 characters the counter asks for a shorter move but does not block it.
+    const SOFT = 300, count = $('#moveCount');
+    const counted = () => {
+      const n = field.value.trim().length, over = n > SOFT;
+      count.textContent = over ? `${n} / ${SOFT} · можно короче` : `${n} / ${SOFT}`;
+      count.classList.toggle('is-over', over);
+    };
+    field.addEventListener('input', () => { commit.disabled = !ready(); counted(); });
 
     commit.addEventListener('click', () => {
       if (!ready()) return;
@@ -230,6 +237,13 @@
       $('#askChoice').focus({ preventScroll: true });
     });
 
+    // Self-check of the written move against the author's move: the participant judges, nothing is sent or scored.
+    const SELF = [
+      ['same', 'Совпал', 'Вы решили сами, ещё до вариантов. В тренажёре так устроена каждая ситуация.'],
+      ['part', 'Частично', 'Сравните свой ход с решающим фактом ниже: на нём держится выбор. Что в вашем ходе к нему не относится?'],
+      ['other', 'Другой', 'Для этого и нужен письменный шаг: видно, где ваш ход расходится с разбором. Начните с решающего факта ниже.']
+    ];
+
     // One decision per play: the first activation wins, whether by pointer, Enter or Space.
     let decided = false, pending = 0;
     function decide(i, button) {
@@ -247,6 +261,14 @@
         const hit = i === q.key;
         verdict.innerHTML = `
           <p class="react"><small>Реакция на ваш выбор</small>${esc(q.reaction[i])}</p>
+          <div class="compare">
+            <div class="cmp"><small>Ваш ход</small><p>${esc(first)}</p></div>
+            <div class="cmp is-author"><small>Ход авторского разбора</small><p>${esc(q.options[q.key])}</p></div>
+          </div>
+          <fieldset class="selfcheck"><legend>Ваш ход совпал с авторским?</legend>
+            <div class="self-row">${SELF.map(([v, t]) => `<button type="button" class="ghost self" data-v="${v}" aria-pressed="false">${t}</button>`).join('')}</div>
+            <p class="self-note" id="selfNote" aria-live="polite"></p>
+          </fieldset>
           <h3><span class="mark${hit ? '' : ' is-other'}" aria-hidden="true"></span>${hit ? 'Ваш выбор совпал с авторским разбором' : 'Авторский разбор выбирает другой ход'}</h3>
           <p>${esc(q.why[i])}</p>
           ${hit ? '' : `<p><b>Авторский разбор выбирает этот ход:</b> ${esc(q.options[q.key])}</p><p>${esc(q.why[q.key])}</p>`}
@@ -261,6 +283,10 @@
           <p class="hint">Авторский черновик: ответы и объяснения ещё должны проверить эксперты.</p>`;
         verdict.hidden = false;
         $('#replay').addEventListener('click', reset);
+        $$('.self', verdict).forEach(b => b.addEventListener('click', () => {
+          $$('.self', verdict).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+          $('#selfNote').textContent = SELF.find(([v]) => v === b.dataset.v)[2];
+        }));
         if (A) A({ targets: [...verdict.children], opacity: [0, 1], translateY: [14, 0], duration: 800, delay: A.stagger(110, { start: 200 }), easing: 'easeOutExpo' });
         const h = $('h3', verdict); h.tabIndex = -1; h.focus({ preventScroll: true });
       }, calm ? 0 : 380);
@@ -272,7 +298,7 @@
       verdict.hidden = true; verdict.innerHTML = '';
       choices.hidden = true; choices.innerHTML = '';
       move.hidden = false;
-      field.value = first; commit.disabled = !ready();
+      field.value = first; commit.disabled = !ready(); counted();
       field.focus();
     }
   }

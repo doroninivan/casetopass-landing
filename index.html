@@ -146,10 +146,12 @@
         <p class="stem" id="stem">Ты руководишь проектом Trend Radar. Задачи, которые Нора поставила в приоритет, уже полтора суток ждут ревью кода у Глеба. Месяц назад команда договорилась проверять код в течение суток. Остальные разработчики укладываются в срок. У Глеба это третья задержка за две недели, она видна в трекере. Сам Глеб пока не знает, что его опоздания кто-то заметил. Нора сегодня уже второй раз спрашивает о ревью. Что сделать первым?</p>
         <div class="move" id="move">
           <label for="firstMove">Ваш ход: что вы сделаете первым и почему?</label>
-          <textarea id="firstMove" maxlength="700" rows="3" placeholder="Сначала я… потому что…"></textarea>
+          <p class="move-why" id="moveWhy">Сначала подумайте сами, без подсказок. Хватит одного-двух предложений: после выбора вы сравните свой ход с разбором.</p>
+          <textarea id="firstMove" maxlength="600" rows="3" placeholder="Сначала я… потому что…" aria-describedby="moveWhy moveHint moveCount"></textarea>
           <div class="move-row">
             <button class="btn" type="button" id="commitMove" disabled>Записать ход <span aria-hidden="true">→</span></button>
-            <span class="hint" id="moveHint">Хотя бы одно предложение. Текст остаётся в этой вкладке, ИИ его не оценивает.</span>
+            <span class="hint" id="moveHint">Текст остаётся в этой вкладке, ИИ его не оценивает.</span>
+            <span class="move-count" id="moveCount">0 / 300</span>
           </div>
         </div>
         <div class="choices" id="choices" hidden></div>
