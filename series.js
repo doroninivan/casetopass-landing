@@ -277,7 +277,7 @@
           <details class="all-why" open><summary>Почему так: разбор всех вариантов</summary>${order.map((k, p) => `<p><b>${'ABCD'[p]}. ${esc(q.options[k])}</b>${k === q.key ? ' <small>ход авторского разбора</small>' : ''}<br>${esc(q.why[k])}</p>`).join('')}</details>
           <p class="hint">В тренажёре за каждой сценой идёт та же тема в других условиях, и граница правила видна на обеих.</p>
           <div class="actions">
-            <a class="btn" href="#pilot">Записаться в пилот <span aria-hidden="true">→</span></a>
+            <a class="btn" href="https://casetopass-sim-pilot.vercel.app/mvp/simulator/#season">Открыть тренажёр <span aria-hidden="true">→</span></a>
             <button type="button" class="ghost" id="replay">Сыграть сцену заново</button>
           </div>
           <p class="hint">Авторский черновик: ответы и объяснения ещё должны проверить эксперты.</p>`;
